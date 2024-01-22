@@ -1,0 +1,88 @@
+version: "4.15.0"
+services:
+  python:
+    build:
+      context: ./Python/
+      dockerfile: Dockerfile
+    depends_on:
+      - mosquitto
+    container_name: irrigationmonitoring
+    restart: always
+    networks:
+      monitoring:
+        ipv4_address: 172.30.0.100
+  
+ 
+ 
+  # Other Components
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto_container
+    volumes:
+      - ./eclipse-mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: always
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    networks:
+      monitoring:
+        ipv4_address: 172.30.0.101
+ 
+  node-red:
+    image: nodered/node-red:latest
+    environment:
+      - TZ=Europe/Amsterdam
+    ports:
+      - "1880:1880"
+    networks:
+      monitoring:
+        ipv4_address: 172.30.0.102
+    volumes:
+      - "./node-red-data:/data"
+ 
+ 
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    ports:
+      - "8086:8086"        
+    restart: always
+    volumes:
+      - "influxdb-data:/var/lib/influxdb"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=admin123
+      - DOCKER_INFLUXDB_INIT_ORG=univaq
+      - DOCKER_INFLUXDB_INIT_BUCKET=iot
+      - DOCKER_INFLUXDB_INIT_ADMIN_TOKEN=Ga4G4JVwcf2-5ERDGp_rMiwA1PWQv14y7IjLSzGzrVlR15Cad-uhsmRbInJXuTPhRUDFCVnEDllb4x9ghi9tEw==
+    networks:
+      monitoring:
+        ipv4_address: 172.30.0.103
+  grafana:
+    image: grafana/grafana
+    container_name: grafana_container
+    volumes:
+      - ./grafana-data:/var/lib/grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+    networks:
+      monitoring:
+        ipv4_address: 172.30.0.104
+ 
+ 
+networks:
+  monitoring:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.30.0.0/16 
+ 
+volumes:
+  mosquitto-data:
+  node-red-data:
+  influxdb-data:
+  grafana-data:  
