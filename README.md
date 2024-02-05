@@ -1,14 +1,6 @@
 Video link: https://www.youtube.com/watch?v=SRvRYIv8SwA&t=211s&ab_channel=DebayanBhattacharya
 
 
--->
-
-
-
-
-
-
-
 
 
 
@@ -62,12 +54,12 @@ Use the `BLANK_README.md` to get started.
 This project is built with the following technologies.
 
 
-* [Python](Python-url)
-* [Paho-MQTT](Paho-MQTT-url)
-* [MQTT](MQTT-url)
-* [Node-RED](Node-RED-url)
-* [InfluxDB](InfluxDB-url)
-* [Grafana](Grafana-url)
+* [![Python][Python]](Python-url)
+* [![Paho-MQTT][Paho-MQTT]](Paho-MQTT-url)
+* [![MQTT][MQTT]](MQTT-url)
+* [![Node-RED][Node-RED]](Node-RED-url)
+* [![InfluxDB][InfluxDB]](InfluxDB-url)
+* [![Grafana][Grafana]](Grafana-url)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -152,45 +144,20 @@ Your Name - [@srdebayan](https://github.com/srdebayan) - srdebayan@gmail.com
 Influxdb token: Ga4G4JVwcf2-5ERDGp_rMiwA1PWQv14y7IjLSzGzrVlR15Cad-uhsmRbInJXuTPhRUDFCVnEDllb4x9ghi9tEw==
 
 
-Influxdb host: http://host.docker.internal:8086
-
-
-Influxdb username: admin 
-
-Influxdb password: admin123
-
-Influxdb bucket: iot
-
-Influxdb organization: univaq
-
-
-
+1. Influxdb
+ ```sh
+  Influxdb username: admin 
+  Influxdb password: admin123
+  Influxdb bucket: iot
+  Influxdb organization: univaq
+```
+2. Grafana
+```sh
 grafana username: admin 
-
 grafana password: admin123
-
+```
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
-## License
 
-Specifying the license under which the project is distributed.
-
-[Python-badge]: https://img.shields.io/badge/Python-<COLOR>?style=for-the-badge&logo=python&logoColor=white
-[Python-url]: (URL to Python documentation or home page)
-
-[Paho-MQTT-badge]: https://img.shields.io/badge/Paho--MQTT-<COLOR>?style=for-the-badge&logo=eclipse-mosquitto&logoColor=white
-[Paho-MQTT-url]: (URL to Paho-MQTT documentation or home page)
-
-[MQTT-badge]: https://img.shields.io/badge/MQTT-<COLOR>?style=for-the-badge&logo=mqtt&logoColor=white
-[MQTT-url]: (URL to MQTT documentation or home page)
-
-[Node-RED-badge]: https://img.shields.io/badge/Node--RED-<COLOR>?style=for-the-badge&logo=nodered&logoColor=white
-[Node-RED-url]: (URL to Node-RED documentation or home page)
-
-[InfluxDB-badge]: https://img.shields.io/badge/InfluxDB-<COLOR>?style=for-the-badge&logo=influxdb&logoColor=white
-[InfluxDB-url]: (URL to InfluxDB documentation or home page)
-
-[Grafana-badge]: https://img.shields.io/badge/Grafana-<COLOR>?style=for-the-badge&logo=grafana&logoColor=white
-[Grafana-url]: (URL to Grafana documentation or home page)
