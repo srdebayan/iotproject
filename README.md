@@ -54,12 +54,12 @@ Use the `BLANK_README.md` to get started.
 This project is built with the following technologies.
 
 
-* [![Python][Python-badge]][Python-url]
-* [![Paho-MQTT][Paho-MQTT]](Paho-MQTT-url)
-* [![MQTT][MQTT]](MQTT-url)
-* [![Node-RED][Node-RED]](Node-RED-url)
-* [![InfluxDB][InfluxDB]](InfluxDB-url)
-* [![Grafana][Grafana]](Grafana-url)
+* [Python][Python-url]
+* [Paho-MQTT](Paho-MQTT-url)
+* [MQTT](MQTT-url)
+* [Node-RED](Node-RED-url)
+* [InfluxDB](InfluxDB-url)
+* [Grafana](Grafana-url)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
