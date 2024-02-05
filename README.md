@@ -32,18 +32,8 @@ Video link: https://www.youtube.com/watch?v=SRvRYIv8SwA&t=211s&ab_channel=Debaya
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+The core objectives of the project include resource monitoring. Through the meticulous analysis of collected data, farmers can optimize resource usage, leading to increased efficiency and reduced operational costs. The system will show the data which is collected through various IOT sensors in a dashboard. The essence of the project is in the fact that how MQTT, Nodered, InfluxDB, and Grafana have been combined to make a data pipeline and show the results graphically.
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
