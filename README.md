@@ -44,7 +44,7 @@ The core objectives of the project include resource monitoring. Through the meti
 This project is built with the following technologies.
 
 
-* [Python][Python-url]
+* [Python](Python-url)
 * [Paho-MQTT](Paho-MQTT-url)
 * [MQTT](MQTT-url)
 * [Node-RED](Node-RED-url)
@@ -74,23 +74,28 @@ Install paho-mqtt in your system: how to install this:
 Instruction for installation of this projectate doesn't rely on any external dependencies or services._
 
 1. Clone the repo
+ *nmp
    ```sh
    git clone  https://github.com/srdebayan/iotproject.git
    ```
 3. Docker compose up: go to the terminal, (having docker demon turned on)
-   ```sh
+*nmp
+```sh
   docker-compose up
-   ```
+```
 4. Grafana dashboard: dashboard "farming_dashboard"
+*nmp
    ```sh
    localhost:3000
    ```
-5. Influxdb:
+6. Influxdb:
+*nmp
   ```sh
    localhost:8086
   ```
 6. Nodered:
-   ```sh
+*nmp
+    ```sh
    localhost:1880
    ```
 
