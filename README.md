@@ -134,7 +134,7 @@ Debayan Bhattacharya - [@srdebayan](https://github.com/srdebayan) - srdebayan@gm
 
 <!-- Credentials -->
 ## Credentials
-Influxdb token: Ga4G4JVwcf2-5ERDGp_rMiwA1PWQv14y7IjLSzGzrVlR15Cad-uhsmRbInJXuTPhRUDFCVnEDllb4x9ghi9tEw==
+
 
 
 1. Influxdb
@@ -143,6 +143,7 @@ Influxdb token: Ga4G4JVwcf2-5ERDGp_rMiwA1PWQv14y7IjLSzGzrVlR15Cad-uhsmRbInJXuTPh
   Influxdb password: admin123
   Influxdb bucket: iot
   Influxdb organization: univaq
+  Influxdb token: Ga4G4JVwcf2-5ERDGp_rMiwA1PWQv14y7IjLSzGzrVlR15Cad-uhsmRbInJXuTPhRUDFCVnEDllb4x9ghi9tEw==
 ```
 2. Grafana
 ```sh
