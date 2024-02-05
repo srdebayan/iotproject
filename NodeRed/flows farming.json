@@ -1,0 +1,514 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3cc11d24.ff01a2",
+        "type": "comment",
+        "z": "f6f2187d.f17ca8",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "4248e7bec91a655c",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "/temperature/+",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5080cd0ca7812f0a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 80,
+        "y": 300,
+        "wires": [
+            [
+                "6ad57659557c0bc6",
+                "2ce5e3ae36090c63"
+            ]
+        ]
+    },
+    {
+        "id": "c510f689927817a6",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 550,
+        "y": 300,
+        "wires": [
+            [
+                "6585a69a65f5c98e"
+            ]
+        ]
+    },
+    {
+        "id": "6bbc826af4dabcd6",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "/humidity/+",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5080cd0ca7812f0a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 480,
+        "wires": [
+            [
+                "81d9287c6f9ac123",
+                "2ce5e3ae36090c63"
+            ]
+        ]
+    },
+    {
+        "id": "d5a44322dd1b2a90",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "658914f135a76ecf",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "/sunlight/+",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5080cd0ca7812f0a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 60,
+        "y": 700,
+        "wires": [
+            [
+                "4e8dc8e0fff7f9e3",
+                "2ce5e3ae36090c63"
+            ]
+        ]
+    },
+    {
+        "id": "0e38b423d02b9e46",
+        "type": "mqtt in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "topic": "/moisture/+",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "5080cd0ca7812f0a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 1000,
+        "wires": [
+            [
+                "bb3f8e911a97d5df",
+                "2ce5e3ae36090c63"
+            ]
+        ]
+    },
+    {
+        "id": "582663b9fb58c752",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "dc71019a7be2673e",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 4",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "6585a69a65f5c98e",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "09865b9742cba91e",
+        "name": "",
+        "measurement": "farm_temperature",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 820,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "c8c338204a39e3d8",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 550,
+        "y": 480,
+        "wires": [
+            [
+                "227d2fa4151b9ea2"
+            ]
+        ]
+    },
+    {
+        "id": "ec799bb4c3f9047d",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 550,
+        "y": 1000,
+        "wires": [
+            [
+                "a75b1f079ab39729"
+            ]
+        ]
+    },
+    {
+        "id": "e3c0ebc835e4c403",
+        "type": "e-mail",
+        "z": "f6f2187d.f17ca8",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "srdebayan@gmail.com",
+        "dname": "Email",
+        "x": 1570,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "bc7f5ec42c4fdbe7",
+        "type": "template",
+        "z": "f6f2187d.f17ca8",
+        "name": "email template",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "Hello Dear Farmer Friend,\n\nYou have to monitor the below farm with the below readings.\nThe farm which has a value of the sensor, has met your notification standard\n\n\nPlease See: {{payload.farm}} \nWhich has temperature: {{payload.temperature}} \nWhich has humidity: {{payload.humidity}} \nWhich has sunlight: {{payload.sunlight}} \nWhich has moisture: {{payload.moisture}} ",
+        "output": "str",
+        "x": 1220,
+        "y": 640,
+        "wires": [
+            [
+                "e940dda6e8a9a229"
+            ]
+        ]
+    },
+    {
+        "id": "e940dda6e8a9a229",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "format email",
+        "func": "let topic = \"001 Please monitor the below farm with the below temperature\";\nlet body = msg.payload;\nmsg.topic = topic;\nmsg.payload = body;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1410,
+        "y": 640,
+        "wires": [
+            [
+                "e3c0ebc835e4c403"
+            ]
+        ]
+    },
+    {
+        "id": "2ce5e3ae36090c63",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "format_email_mqtt",
+        "func": "// Check if the temperature is greater than 30 and if the 'topic' property exists\nif (msg.payload && msg.payload.temperature > 39 && msg.topic) {\n    // Extract the farm subtopic from the topic\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Pass the farm subtopic and temperature value to the next node\n    msg.payload = {\n        \"farm\": farmSubtopic,\n        \"temperature\": msg.payload.temperature,\n        \"humidity\": msg.payload.humidity,\n        \"sunlight\": msg.payload.sunlight,\n        \"moisture\": msg.payload.moisture\n\n\n    };\n\n    return msg;\n} else if (msg.payload && msg.payload.humidity < 99 && msg.topic) {\n\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Pass the farm subtopic and  value to the next node\n    msg.payload = {\n        \"farm\": farmSubtopic,\n        \"temperature\": msg.payload.temperature,\n        \"humidity\": msg.payload.humidity,\n        \"sunlight\": msg.payload.sunlight,\n        \"moisture\": msg.payload.moisture\n    };\n\n    return msg;\n} else if (msg.payload && msg.payload.sunlight < 199 && msg.topic) {\n\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Pass the farm subtopic and  value to the next node\n    msg.payload = {\n        \"farm\": farmSubtopic,\n        \"temperature\": msg.payload.temperature,\n        \"humidity\": msg.payload.humidity,\n        \"sunlight\": msg.payload.sunlight,\n        \"moisture\": msg.payload.moisture\n    };\n\n    return msg;\n} else if (msg.payload && msg.payload.moisture < 99 && msg.topic) {\n\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Pass the farm subtopic and  value to the next node\n    msg.payload = {\n        \"farm\": farmSubtopic,\n        \"temperature\": msg.payload.temperature,\n        \"humidity\": msg.payload.humidity,\n        \"sunlight\": msg.payload.sunlight,\n        \"moisture\": msg.payload.moisture\n    };\n\n    return msg;\n} else {\n    // If the temperature is not greater than 30 or 'topic' property is missing, do not pass the message\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 640,
+        "wires": [
+            [
+                "bc7f5ec42c4fdbe7"
+            ]
+        ]
+    },
+    {
+        "id": "6ad57659557c0bc6",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "format_temp_msg",
+        "func": "// Input message format: {\"temperature\": value, ..., \"topic\": \"/temperature/farm1\"}\nvar inputMessage = msg.payload;\n\n// Check if the 'temperature' property and 'topic' property exist\nif (inputMessage && inputMessage.temperature !== undefined && msg.topic) {\n    // Extract the farm subtopic from the topic\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Create a new payload with the combined key and temperature value\n    msg.payload = {\n        [ \"temperature_\" + farmSubtopic ]: inputMessage.temperature\n    };\n\n    return msg;\n} else {\n    // If the 'temperature' property is missing or 'topic' property is missing, do not pass the message\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "c510f689927817a6",
+                "5990675cce5088b9"
+            ]
+        ]
+    },
+    {
+        "id": "5990675cce5088b9",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 7",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 300,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "81d9287c6f9ac123",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "format_hum_msg",
+        "func": "// Input message format: {\"humidity\": value, ..., \"topic\": \"/humidity/farm1\"}\nvar inputMessage = msg.payload;\n\n// Check if the 'humidity' property and 'topic' property exist\nif (inputMessage && inputMessage.humidity !== undefined && msg.topic) {\n    // Extract the farm subtopic from the topic\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Create a new payload with the combined key and humidity value\n    msg.payload = {\n        [ \"humidity_\" + farmSubtopic ]: inputMessage.humidity\n    };\n\n    return msg;\n} else {\n    // If the 'humidity' property is missing or 'topic' property is missing, do not pass the message\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 480,
+        "wires": [
+            [
+                "d5a44322dd1b2a90",
+                "c8c338204a39e3d8"
+            ]
+        ]
+    },
+    {
+        "id": "227d2fa4151b9ea2",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "09865b9742cba91e",
+        "name": "",
+        "measurement": "farm_humidity",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 790,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "4e8dc8e0fff7f9e3",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "format_sunlight_msg",
+        "func": "// Input message format: {\"sunlight\": value, ..., \"topic\": \"/sunlight/farm1\"}\nvar inputMessage = msg.payload;\n\n// Check if the 'sunlight' property and 'topic' property exist\nif (inputMessage && inputMessage.sunlight !== undefined && msg.topic) {\n    // Extract the farm subtopic from the topic\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Create a new payload with the combined key and sunlight value\n    msg.payload = {\n        [ \"sunlight_\" + farmSubtopic ]: inputMessage.sunlight\n    };\n\n    return msg;\n} else {\n    // If the 'sunlight' property is missing or 'topic' property is missing, do not pass the message\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 700,
+        "wires": [
+            [
+                "582663b9fb58c752",
+                "784c10937b1c2312"
+            ]
+        ]
+    },
+    {
+        "id": "784c10937b1c2312",
+        "type": "json",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 550,
+        "y": 700,
+        "wires": [
+            [
+                "5364202fc846837d"
+            ]
+        ]
+    },
+    {
+        "id": "5364202fc846837d",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "09865b9742cba91e",
+        "name": "",
+        "measurement": "farm_sunlight",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 800,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "bb3f8e911a97d5df",
+        "type": "function",
+        "z": "f6f2187d.f17ca8",
+        "name": "format_moisture_msg",
+        "func": "// Input message format: {\"moisture\": value, ..., \"topic\": \"/moisture/farm1\"}\nvar inputMessage = msg.payload;\n\n// Check if the 'moisture' property and 'topic' property exist\nif (inputMessage && inputMessage.moisture !== undefined && msg.topic) {\n    // Extract the farm subtopic from the topic\n    var farmSubtopic = msg.topic.split('/')[2];\n\n    // Create a new payload with the combined key and moisture value\n    msg.payload = {\n        [ \"moisture_\" + farmSubtopic ]: inputMessage.moisture\n    };\n\n    return msg;\n} else {\n    // If the 'moisture' property is missing or 'topic' property is missing, do not pass the message\n    return null;\n}\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 1000,
+        "wires": [
+            [
+                "dc71019a7be2673e",
+                "ec799bb4c3f9047d"
+            ]
+        ]
+    },
+    {
+        "id": "a75b1f079ab39729",
+        "type": "influxdb out",
+        "z": "f6f2187d.f17ca8",
+        "influxdb": "09865b9742cba91e",
+        "name": "",
+        "measurement": "farm_moisture",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "univaq",
+        "bucket": "iot",
+        "x": 790,
+        "y": 1000,
+        "wires": []
+    },
+    {
+        "id": "5080cd0ca7812f0a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "172.30.0.101",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "09865b9742cba91e",
+        "type": "influxdb",
+        "hostname": "http://host.docker.internal:",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "influxdb1",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://host.docker.internal:8086",
+        "timeout": "1",
+        "rejectUnauthorized": true
+    }
+]
