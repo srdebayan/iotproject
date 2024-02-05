@@ -104,7 +104,7 @@ Instruction for installation of this projectate doesn't rely on any external dep
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Usage of this project is described in the documentation mentioned here,please refer to the [Documentation](/docs.google.com/document/d/1OEeDvpzonv0mm_RzSJyPqbeKO3b86FiS9NGWq9lIYKY/edit?usp=sharing )_
+Usage of this project is described in the documentation mentioned here,please refer to the [Documentation](https://docs.google.com/document/d/1tT2xdnplRxbzTK6J6AsmpQxYyPG1PPW2lE9D3dychoo/edit?usp=sharing)_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
