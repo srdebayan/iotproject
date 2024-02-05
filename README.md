@@ -61,8 +61,7 @@ Use the `BLANK_README.md` to get started.
 
 This project is built with the following technologies.
 
-* [![Next][Next.js]][Next-url]
-* [React.js](React-url)
+
 * [Node-RED](Node-RED-url)
 * [MQTT](MQTT-url)
 * [InfluxDB](InfluxDB-url)
