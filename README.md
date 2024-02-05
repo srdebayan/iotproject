@@ -64,7 +64,6 @@ This is project for Smart Farming Monitoring System using python simulator, mqtt
 ### Prerequisites
 
 Install paho-mqtt in your system: how to install this:
-* npm
   ```sh
   pip install paho-mqtt
   ```
