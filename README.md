@@ -62,20 +62,13 @@ Use the `BLANK_README.md` to get started.
 This project is built with the following technologies.
 
 
-* [Node-RED](Node-RED-url)
+* [Python](Python-url)
+* [Paho-MQTT](Paho-MQTT-url)
 * [MQTT](MQTT-url)
+* [Node-RED](Node-RED-url)
 * [InfluxDB](InfluxDB-url)
 * [Grafana](Grafana-url)
-* [Python](Python-url)
-* [Docker](Docker-url)
 
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -177,3 +170,27 @@ grafana username: admin
 grafana password: admin123
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## License
+
+Specifying the license under which the project is distributed.
+
+[Python-badge]: https://img.shields.io/badge/Python-<COLOR>?style=for-the-badge&logo=python&logoColor=white
+[Python-url]: (URL to Python documentation or home page)
+
+[Paho-MQTT-badge]: https://img.shields.io/badge/Paho--MQTT-<COLOR>?style=for-the-badge&logo=eclipse-mosquitto&logoColor=white
+[Paho-MQTT-url]: (URL to Paho-MQTT documentation or home page)
+
+[MQTT-badge]: https://img.shields.io/badge/MQTT-<COLOR>?style=for-the-badge&logo=mqtt&logoColor=white
+[MQTT-url]: (URL to MQTT documentation or home page)
+
+[Node-RED-badge]: https://img.shields.io/badge/Node--RED-<COLOR>?style=for-the-badge&logo=nodered&logoColor=white
+[Node-RED-url]: (URL to Node-RED documentation or home page)
+
+[InfluxDB-badge]: https://img.shields.io/badge/InfluxDB-<COLOR>?style=for-the-badge&logo=influxdb&logoColor=white
+[InfluxDB-url]: (URL to InfluxDB documentation or home page)
+
+[Grafana-badge]: https://img.shields.io/badge/Grafana-<COLOR>?style=for-the-badge&logo=grafana&logoColor=white
+[Grafana-url]: (URL to Grafana documentation or home page)
