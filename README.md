@@ -74,27 +74,26 @@ Install paho-mqtt in your system: how to install this:
 Instruction for installation of this projectate doesn't rely on any external dependencies or services._
 
 1. Clone the repo
- *nmp
    ```sh
    git clone  https://github.com/srdebayan/iotproject.git
    ```
 3. Docker compose up: go to the terminal, (having docker demon turned on)
-*nmp
-```sh
-  docker-compose up
-```
+
+    ```sh
+    docker-compose up
+    ```
 4. Grafana dashboard: dashboard "farming_dashboard"
-*nmp
+
    ```sh
    localhost:3000
    ```
 6. Influxdb:
-*nmp
+
   ```sh
    localhost:8086
   ```
 6. Nodered:
-*nmp
+
     ```sh
    localhost:1880
    ```
@@ -124,8 +123,8 @@ Usage of this project is described in the documentation mentioned here,please re
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@kabta](https://github.com/kabta]) - kabitaad85@gmail.com
-Your Name - [@srdebayan](https://github.com/srdebayan) - srdebayan@gmail.com
+Kabita Adhikari - [@kabta](https://github.com/kabta]) - kabitaad85@gmail.com
+Debayan Bhattacharya - [@srdebayan](https://github.com/srdebayan) - srdebayan@gmail.com
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
