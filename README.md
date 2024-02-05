@@ -54,7 +54,7 @@ Use the `BLANK_README.md` to get started.
 This project is built with the following technologies.
 
 
-* [![Python][Python]](Python-url)
+* [![Python][Python-badge]][Python-url]
 * [![Paho-MQTT][Paho-MQTT]](Paho-MQTT-url)
 * [![MQTT][MQTT]](MQTT-url)
 * [![Node-RED][Node-RED]](Node-RED-url)
